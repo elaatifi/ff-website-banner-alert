@@ -1,0 +1,30 @@
+.container {
+  width: 300px;
+  text-align: justify;
+  font-size: 14px;
+}
+
+#force-update-urls {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: #FFF;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container a {
+  color: #00F;
+  text-decoration: none;
+}
+
+.container a:hover {
+  color: #F00;
+  text-decoration: underline;
+}
+
+.container p {
+  border: 1px dashed #CCC;
+  padding: 8px;
+}

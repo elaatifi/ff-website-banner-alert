@@ -1,0 +1,48 @@
+{
+  "manifest_version": 2,
+
+  "name": "Website Banner Alert",
+  "description": "Show alert banner to some specific websites",
+  "version": "1.0.0",
+  "icons": {
+    "32": "assets/img/ico-32.png",
+    "48": "assets/img/ico-48.png",
+    "64": "assets/img/ico-48.png",
+    "96": "assets/img/ico-48.png"
+  },
+
+  "browser_action": {
+    "default_icon": "assets/img/ico-32.png",
+    "default_popup": "popup.html",
+    "default_title": "Website banner alert"
+  },
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "webNavigation",
+    "activeTab",
+    "https://api.sheety.co/*"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "*://*/*"
+    ],
+    "js": [
+      "assets/js/website-banner-alert.js"
+    ],
+    "css": [
+      "assets/css/alert.css"
+    ]
+  }],
+  "background": {
+    "scripts": [
+      "assets/js/background.js"
+    ]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "namnv609@gmail.com"
+    }
+  }
+}
