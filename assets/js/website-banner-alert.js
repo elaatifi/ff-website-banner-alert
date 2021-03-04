@@ -31,7 +31,7 @@ var ALERT_MESSAGE_ELEMENT_ID = "website-banner-alert-message";
  * Cập nhật (init) danh sách các URL
  */
 function fetchData() {
-  var xmlHttpRequest = new XMLHttpRequest();
+  /*var xmlHttpRequest = new XMLHttpRequest();
 
   xmlHttpRequest.open("GET", API_URL, true);
   xmlHttpRequest.send('');
@@ -45,14 +45,24 @@ function fetchData() {
 
       // Lưu dữ liệu đã lấy được vào local storage để dùng dần :v
       browser.storage.local.set(storageData);
-      /**
-       * Xóa session isCorrectDomain đã lưu (nếu có) để cập nhật lại
-       * Phòng trường hợp trang này trước đáy không được hiển thị nhưng
-       * sau khi update xong lại cần được hiển thị message
-       */
+  
       sessionStorage.removeItem(IS_CORRECT_DOMAIN_KEY);
     }
-  };
+  };*/
+  var websites = [
+    {
+      url: "https://google.com",
+      message: "Hello Google :-)"
+    }
+  ]; 
+  var storageData = {};
+  storageData[SITES_KEY] = JSON.stringify(websites);
+  storageData[LAST_UPDATE_SITES_KEY] = new Date().getTime();
+  
+  browser.storage.local.set(storageData);
+
+  sessionStorage.removeItem(IS_CORRECT_DOMAIN_KEY);
+  
 }
 
 /**
